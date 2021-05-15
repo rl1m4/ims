@@ -6,7 +6,7 @@ defmodule ImsWeb.RestaurantsController do
   def create(conn, params) do
     with {:ok, %Restaurant{} = restaurant} <- Create.call(params) do
       conn
-      |> put_status(:ok)
+      |> put_status(:created)
       |> render("create.json", restaurant: restaurant)
     end
   end
