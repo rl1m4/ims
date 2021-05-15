@@ -9,15 +9,18 @@ defmodule Ims.Welcome do
     name = params["name"]
     age = params["age"]
 
-    name =
-      params["name"]
-      |> String.trim()
-      |> String.downcase()
+    params["name"]
+    |> String.trim()
+    |> String.downcase()
+    |> evaluate(age)
+  end
 
-    if name == "simba" and age == "17" do
-      IO.puts("Special")
-    else
-      IO.puts("Not special")
-    end
+  # private defp - receives 2 params but sent just one above because |>
+  defp evaluate("simba", "17") do
+    "Special"
+  end
+
+  defp evaluate(name, age) do
+    "Not Special #{name}"
   end
 end
