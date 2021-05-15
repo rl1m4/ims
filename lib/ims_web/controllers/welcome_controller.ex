@@ -15,7 +15,7 @@ defmodule ImsWeb.WelcomeController do
     |> json(%{message: message})
   end
 
-  defp handle_response({:errpr, message}, conn) do
+  defp handle_response({:error, message}, conn) do
     conn
     |> put_status(:bad_request)
     |> json(%{message: message})
