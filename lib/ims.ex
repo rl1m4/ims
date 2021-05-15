@@ -9,8 +9,11 @@ defmodule Ims do
 
   alias Ims.Restaurants.Create, as: RestaurantCreate
   alias Ims.Supplies.Create, as: SupplyCreate
+  alias Ims.Supplies.Get, as: SupplyGet
 
   defdelegate create_restaurant(params), to: RestaurantCreate, as: :call
 
   defdelegate create_supply(params), to: SupplyCreate, as: :call
+
+  defdelegate get_supply(params), to: SupplyGet, as: :call
 end

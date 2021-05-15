@@ -12,7 +12,10 @@ defmodule ImsWeb.Router do
 
     post "/restaurants", RestaurantsController, :create
 
-    post "/supplies", SuppliesController, :create
+    #    post "/supplies", SuppliesController, :create
+    #    get "/supplies/:id", SuppliesController, :show
+    # mix phx.routes
+    resources "/supplies", SuppliesController, only: [:create, :show]
   end
 
   # Enables LiveDashboard only for development
