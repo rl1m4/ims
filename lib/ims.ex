@@ -7,7 +7,10 @@ defmodule Ims do
   if it comes from the database, an external API or others.
   """
 
-  alias Ims.Restaurants.Create
+  alias Ims.Restaurants.Create, as: RestaurantCreate
+  alias Ims.Supplies.Create, as: SupplyCreate
 
-  defdelegate create_restaurant(params), to: Create, as: :call
+  defdelegate create_restaurant(params), to: RestaurantCreate, as: :call
+
+  defdelegate create_supply(params), to: SupplyCreate, as: :call
 end
