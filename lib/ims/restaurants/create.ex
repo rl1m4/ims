@@ -12,7 +12,7 @@ defmodule Ims.Restaurants.Create do
   defp handle_insert({:error, result}), do: {:error, %{result: result, status: :bad_request}}
 end
 
-comment """
+"""
  %{
    result: #Ecto.Changeset<
      action: :insert,
@@ -40,5 +40,4 @@ INSERT INTO "restaurants" ("email","name","inserted_at","updated_at","id") VALUE
    name: "test",
    updated_at: ~N[2021-05-15 13:33:47]
  }}
-
 """
