@@ -9,6 +9,10 @@ Requirements to start your Phoenix server:
 * Connect to DB using config/config.exs and docker settings:
   
   `mix ecto.create`
+ 
+  `mix ecto.gen.migration create_restaurants_table`
+
+  `mix ecto.migrate`
   
 * Install dependencies with: 
   
