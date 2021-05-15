@@ -5,11 +5,10 @@ defmodule Ims.Welcome do
   # if user is age w -> returns an error
   # Check for wrong user names
 
-  def welcome(params) do
-    name = params["name"]
-    age = params["age"] |> String.to_integer()
+  def welcome(%{"name" => name, "age" => age}) do
+    age = String.to_integer(age)
 
-    params["name"]
+    name
     |> String.trim()
     |> String.downcase()
     |> evaluate(age)
@@ -17,14 +16,22 @@ defmodule Ims.Welcome do
 
   # private defp - receives 2 params but sent just one above because |>
   defp evaluate("simba", 40) do
-    "Special"
+    {:ok, "Special"} #tuple
   end
 
   defp evaluate(name, age) when age >= 18 do
-    "Not Special #{name}"
+    {:ok, "Not Special #{name}"}
   end
 
-#  defp evaluate(name, age) do
-#    "Not pass #{name}"
-#  end
+  defp evaluate(name, age) do
+    {:error, "Not pass #{name}"}
+  end
+
+  #  defp evaluate({:ok, something }) do
+  #    {:error, "Something #{name}"}
+  #  end
+  #
+  #  defp evaluate(:error, something) do
+  #    {:error, "Something #{name}"}
+  #  end
 end
