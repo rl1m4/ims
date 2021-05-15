@@ -16,7 +16,8 @@ defmodule Ims.Welcome do
 
   # private defp - receives 2 params but sent just one above because |>
   defp evaluate("simba", 40) do
-    {:ok, "Special"} #tuple
+    # tuple
+    {:ok, "Special"}
   end
 
   defp evaluate(name, age) when age >= 18 do
@@ -26,12 +27,4 @@ defmodule Ims.Welcome do
   defp evaluate(name, age) do
     {:error, "Not pass #{name}"}
   end
-
-  #  defp evaluate({:ok, something }) do
-  #    {:error, "Something #{name}"}
-  #  end
-  #
-  #  defp evaluate(:error, something) do
-  #    {:error, "Something #{name}"}
-  #  end
 end

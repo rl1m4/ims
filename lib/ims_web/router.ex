@@ -7,6 +7,8 @@ defmodule ImsWeb.Router do
 
   scope "/api", ImsWeb do
     pipe_through :api
+
+    get "/", WelcomeController, :index
   end
 
   # Enables LiveDashboard only for development
