@@ -4,7 +4,7 @@ defmodule ImsWeb.RestaurantsView do
   def render("create.json", %{restaurant: restaurant}) do
     %{
       message: "Restaurant created",
-      # restaurnt is a struct not a map - it needs to render properly @derive
+      # restaurant is a struct not a map - it needs to render properly @derive
       restaurant: restaurant
     }
   end

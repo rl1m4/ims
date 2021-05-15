@@ -7,7 +7,7 @@ defmodule Ims.Restaurant do
   # module variable @sample
   @primary_key {:id, :binary_id, autogenerate: true}
 
-  @required_params [:email, :name]
+  @required_params [:name, :email]
 
   # render  structs to json - ie. Restaurants struct
   @derive {Jason.Encoder, only: @required_params ++ [:id]}

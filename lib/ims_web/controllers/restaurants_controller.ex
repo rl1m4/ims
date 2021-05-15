@@ -1,4 +1,4 @@
-defmodule ImsWeb.RestaurantController do
+defmodule ImsWeb.RestaurantsController do
   use ImsWeb, :controller
 
   alias Ims.{Restaurant, Restaurants.Create}
