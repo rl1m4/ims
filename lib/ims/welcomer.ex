@@ -9,7 +9,8 @@ defmodule Ims.Welcome do
     name = params["name"]
     age = params["age"]
 
-    IO.inspect(name)
-    IO.inspect(age)
+    params["name"]
+    |> String.trim()
+    |> String.downcase()
   end
 end
