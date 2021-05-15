@@ -12,6 +12,8 @@ Requirements to start your Phoenix server:
  
   `mix ecto.gen.migration create_restaurants_table`
 
+  `mix ecto.gen.migration create_supplies_table`
+
   `mix ecto.migrate`
   
 * Install dependencies with: 
