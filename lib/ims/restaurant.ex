@@ -1,7 +1,7 @@
 defmodule Ims.Restaurant do
   use Ecto.Schema
-  #https://hexdocs.pm/ecto/Ecto.Changeset.html
-  #ecto documentation, validation, schema, etc
+  # https://hexdocs.pm/ecto/Ecto.Changeset.html
+  # ecto documentation, validation, schema, etc
   import Ecto.Changeset
 
   # module variable @sample
@@ -15,11 +15,15 @@ defmodule Ims.Restaurant do
   end
 
   def changeset(params) do
-    %__MODULE__{} #replace to Ims.Restaurant
-    |> cast(params, [:email, :name]) #atom list
-    |> validate_required([:email, :name]) #validation
+    # replace to Ims.Restaurant
+    %__MODULE__{}
+    # atom list
+    |> cast(params, [:email, :name])
+    # validation
+    |> validate_required([:email, :name])
     |> validate_length(:name, min: 2)
-    |> validate_format(:email, ~r/@/) #regex email
+    # regex email
+    |> validate_format(:email, ~r/@/)
     |> unique_constraint([:email])
   end
 end
