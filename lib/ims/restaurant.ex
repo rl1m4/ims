@@ -7,6 +7,11 @@ defmodule Ims.Restaurant do
   # module variable @sample
   @primary_key {:id, :binary_id, autogenerate: true}
 
+  @required_params [:email, :name]
+
+  # render  structs to json - ie. Restaurants struct
+  @derive {Jason.Encoder, only: @required_params ++ [:id]}
+
   schema "restaurants" do
     field :email, :string
     field :name, :string
@@ -18,9 +23,9 @@ defmodule Ims.Restaurant do
     # replace to Ims.Restaurant
     %__MODULE__{}
     # atom list
-    |> cast(params, [:email, :name])
+    |> cast(params, @required_params)
     # validation
-    |> validate_required([:email, :name])
+    |> validate_required(@required_params)
     |> validate_length(:name, min: 2)
     # regex email
     |> validate_format(:email, ~r/@/)
