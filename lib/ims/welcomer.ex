@@ -9,8 +9,15 @@ defmodule Ims.Welcome do
     name = params["name"]
     age = params["age"]
 
-    params["name"]
-    |> String.trim()
-    |> String.downcase()
+    name =
+      params["name"]
+      |> String.trim()
+      |> String.downcase()
+
+    if name == "simba" and age == "17" do
+      IO.puts("Special")
+    else
+      IO.puts("Not special")
+    end
   end
 end
